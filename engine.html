@@ -9,13 +9,15 @@
       padding: 0;
       height: 100%;
       font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-      background: url('images/banner2.jpg') no-repeat center center fixed;
+      background: url('images/banner.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent dark overlay */
+      background-color: rgba(0, 0, 0, 0.6); /* darker overlay */
+      backdrop-filter: blur(10px);         /* blur the background behind the text */
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
       height: 100%;
       width: 100%;
       padding: 40px;
@@ -44,6 +46,12 @@
 
     em {
       font-style: italic;
+    }
+
+    footer {
+      margin-top: 2em;
+      font-size: 0.9em;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -74,6 +82,16 @@
     <p>
       This enormous power would not be achieved again until the giant waterwheels that were built in the 19th century CE.
     </p>
+
+    <footer>
+      Page last loaded: <span id="timestamp"></span>
+    </footer>
   </div>
+
+  <script>
+    // Show cache-busting timestamp in the footer
+    const now = new Date();
+    document.getElementById("timestamp").textContent = now.toLocaleString();
+  </script>
 </body>
 </html>

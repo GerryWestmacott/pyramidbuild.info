@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>My Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- important for mobile scaling -->
   <style>
     html, body {
       margin: 0;
       height: 100%;
       font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
     }
 
     body {
       background: url('images/banner2.jpg') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
     }
 
+    /* Sidebar for desktop */
     .sidebar {
-      width: 200px;
       background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
+      width: 200px;
     }
 
     .menu-item {
       color: white;
-      padding: 15px;
+      padding: 20px;
       text-decoration: none;
+      font-size: 1.1em;
       transition: background-color 0.3s;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .menu-item:hover {
@@ -44,6 +50,35 @@
       height: 100%;
       border: none;
       background: transparent;
+    }
+
+    /* Responsive behavior for mobile */
+    @media (max-width: 768px) {
+      html, body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        flex-direction: row;
+        width: 100%;
+        height: 60px;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+
+      .menu-item {
+        flex: 1;
+        text-align: center;
+        padding: 15px;
+        font-size: 1em;
+        white-space: nowrap;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .content {
+        height: calc(100vh - 60px);
+      }
     }
   </style>
 </head>
@@ -62,19 +97,18 @@
     <iframe name="contentFrame" src="home.html"></iframe>
   </div>
 
-<script>
-  // Automatically bust cache for all menu-item links
-  document.querySelectorAll('.menu-item').forEach(link => {
-    link.addEventListener('click', function (event) {
-      event.preventDefault(); // stop normal link navigation
-      const frame = document.getElementsByName('contentFrame')[0];
-      const url = new URL(this.href, window.location.href);
-      url.searchParams.set('t', Date.now()); // add timestamp
-      frame.src = url.href; // load fresh version into iframe
+  <script>
+    // Automatically bust cache for all menu-item links
+    document.querySelectorAll('.menu-item').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // stop normal link navigation
+        const frame = document.getElementsByName('contentFrame')[0];
+        const url = new URL(this.href, window.location.href);
+        url.searchParams.set('t', Date.now()); // add timestamp
+        frame.src = url.href; // load fresh version into iframe
+      });
     });
-  });
-</script>
+  </script>
 
-  
 </body>
 </html>

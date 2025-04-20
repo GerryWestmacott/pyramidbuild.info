@@ -1,1 +1,11 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Welcome to the Home Page</h1>
+  <p>This is your website homepage.</p>
+</body>
+</html>

@@ -8,37 +8,57 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      background: url('images/banner2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
     }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      height: 100%;
+    /* Separate blurred background */
+    .background {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%;
+      height: 100%;
+      background: url('images/banner2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: 0;
+      filter: blur(10px);
+    }
+
+    /* Dark semi-transparent overlay */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    /* Video container - keeps video on top and clickable */
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-sizing: border-box;
     }
 
     video {
       max-width: 90%;
       max-height: 80%;
-      border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <video controls>
-      
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  <div class="background"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <video controls autoplay muted>
+      <source src="media/your-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>

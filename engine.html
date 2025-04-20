@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>500 HP Engine</title>
-  <link rel="stylesheet" href="styles/common.css"> <!-- Optional shared styles -->
   <style>
-    body {
-      background: transparent;
-      color: white;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
-      line-height: 1.6;
-      padding: 20px;
+      background: url('images/banner.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+      height: 100%;
+      width: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      overflow-y: auto;
     }
 
     h1 {
@@ -24,39 +34,46 @@
     }
 
     p {
+      line-height: 1.6;
       margin-bottom: 1em;
     }
 
     strong {
       font-weight: 600;
     }
+
+    em {
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
-  <h1>The Great Pyramid – the way it was built</h1>
-  <h2>The 500 Horsepower Engine</h2>
-  <p><em>Perhaps the World’s first real engine</em></p>
+  <div class="overlay">
+    <h1>The Great Pyramid – the way it was built</h1>
+    <h2>The 500 Horsepower Engine</h2>
+    <p><em>Perhaps the World’s first real engine</em></p>
 
-  <h2>What do we mean by “engine”?</h2>
-  <p>
-    We mean some device that provides <strong>useable POWER</strong>. Prior to the last 1500 years or so, power was limited to animal and human effort.
-    The first engines were water wheels and windmills — these were in use for several hundred years before the advent of the steam engine,
-    but there was nothing we know of in the prior 3000 years.
-  </p>
+    <h2>What do we mean by “engine”?</h2>
+    <p>
+      We mean some device that provides <strong>useable POWER</strong>. Prior to the last 1500 years or so, power was limited to animal and human effort.
+      The first engines were water wheels and windmills — these were in use for several hundred years before the advent of the steam engine,
+      but there was nothing we know of in the prior 3000 years.
+    </p>
 
-  <p>
-    Mining stone blocks and floating them on barges to the pyramid site is fairly well understood and presents no insurmountable problems.
-    <strong>Lifting the blocks</strong>, however, is more difficult and required some real power.
-  </p>
+    <p>
+      Mining stone blocks and floating them on barges to the pyramid site is fairly well understood and presents no insurmountable problems.
+      <strong>Lifting the blocks</strong>, however, is more difficult and required some real power.
+    </p>
 
-  <p>
-    Technically, one horsepower is the power delivered at a rate of 550 ft-lbs per second.
-    The model lift engine delivers the equivalent of <strong>1000 hp</strong> but only during its lifting cycle;
-    the maximum continuous output is about <strong>500 hp</strong>.
-  </p>
+    <p>
+      Technically, one horsepower is the power delivered at a rate of 550 ft-lbs per second.
+      The model lift engine delivers the equivalent of <strong>1000 hp</strong> but only during its lifting cycle;
+      the maximum continuous output is about <strong>500 hp</strong>.
+    </p>
 
-  <p>
-    This enormous power would not be achieved again until the giant waterwheels that were built in the 19th century CE.
-  </p>
+    <p>
+      This enormous power would not be achieved again until the giant waterwheels that were built in the 19th century CE.
+    </p>
+  </div>
 </body>
 </html>

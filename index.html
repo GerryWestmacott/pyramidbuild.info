@@ -11,20 +11,20 @@
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: row;
-      overflow: hidden;
     }
 
     body {
       background: url('images/banner2.jpg') no-repeat center center fixed;
       background-size: cover;
+      overflow: hidden;
     }
 
-    /* Sidebar styles */
     .sidebar {
       width: 200px;
       background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
     }
 
     .menu-item {
@@ -40,22 +40,20 @@
       background-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Content iframe container */
     .content {
-      flex: 1;
-      min-width: 0;
-      height: 100vh;
+      flex-grow: 1;
+      height: 100%;
+      min-height: 300px;
     }
 
     iframe {
       width: 100%;
       height: 100%;
-      min-height: 300px;
       border: none;
       background: transparent;
     }
 
-    /* Responsive: switch to horizontal nav on small devices */
+    /* Responsive: turn sidebar into horizontal menu on small screens */
     @media (max-width: 600px) {
       html, body {
         flex-direction: column;
@@ -80,7 +78,9 @@
       }
 
       .content {
+        flex-grow: 1;
         height: calc(100vh - 60px);
+        min-height: 300px;
       }
     }
   </style>
@@ -104,11 +104,11 @@
     // Automatically bust cache for all menu-item links
     document.querySelectorAll('.menu-item').forEach(link => {
       link.addEventListener('click', function (event) {
-        event.preventDefault(); // stop normal link navigation
+        event.preventDefault();
         const frame = document.getElementsByName('contentFrame')[0];
         const url = new URL(this.href, window.location.href);
         url.searchParams.set('t', Date.now()); // add timestamp
-        frame.src = url.href; // load fresh version into iframe
+        frame.src = url.href;
       });
     });
   </script>

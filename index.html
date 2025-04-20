@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Site</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -15,18 +19,16 @@
       background-size: cover;
     }
 
-    body {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      grid-template-rows: 100%;
-    }
-
     .sidebar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
       background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      overflow-y: auto;
+      z-index: 2;
     }
 
     .menu-item {
@@ -43,29 +45,28 @@
     }
 
     .content {
-      height: 100vh;
-      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 200px;
+      right: 0;
+      bottom: 0;
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
+      background: transparent;
     }
 
-    /* Responsive mobile layout */
+    /* Mobile override: horizontal top bar menu */
     @media (max-width: 600px) {
-      body {
-        grid-template-columns: 1fr;
-        grid-template-rows: 60px 1fr;
-      }
-
       .sidebar {
         flex-direction: row;
         width: 100%;
         height: 60px;
-        overflow-x: auto;
-        overflow-y: hidden;
+        top: 0;
+        left: 0;
       }
 
       .menu-item {
@@ -79,12 +80,16 @@
       }
 
       .content {
-        height: calc(100vh - 60px);
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
       }
     }
   </style>
 </head>
 <body>
+
   <div class="sidebar">
     <a class="menu-item" href="home.html" target="contentFrame">Home</a>
     <a class="menu-item" href="details.html" target="contentFrame">Details</a>
@@ -110,5 +115,6 @@
       });
     });
   </script>
+
 </body>
 </html>

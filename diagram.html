@@ -3,10 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <title>Diagram</title>
-  <link rel="stylesheet" href="styles/common.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/banner2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      height: 100%;
+      width: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    img.diagram {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    h1, h2 {
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      margin-bottom: 1em;
+      padding-left: 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    code {
+      font-family: monospace;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .spacer {
+      height: 60px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Diagram</h1>
-  <p>Coming Soon</p>
-</body>
-</html>
+  <div class="overlay">
+    <img src="images/visio.jpg" alt="Diagram" class="diagram">
+
+    <h1>Annex</h1>
+    <h2>Theoretical Comparison of Dragging Blocks vs Boat Lift Hoisting</h2>
+
+    <h3>Assumptions and Facts</h3>
+    <ul>
+      <li>Mass of Great Pyramid: <code>6.5 × 10⁹ kg</code> (6½ million tonnes)</li>
+      <li>Centre of gravity (c.g.) of a 4-sided pyramid is ¼ way up the central vertical line</li>
+      <li>Effective pyramid height: <code>145 m</code>, c.g. at <code>38 m</code></li>
+      <li>Ramp length to midpoint: <code>400 m</code> (approx. 10° slope)</li>
+      <li>Coefficient of friction for dragging: <code>0.1</code></li>
+    </ul>
+
+    <h3>Work for Ramp Dragging</h3>
+    <p>
+      <strong>Element 1:</strong> Potential energy to raise blocks to 38m:<br>
+      <code>6.5 × 10⁹ × 38 = 2.47 × 10¹¹ m·kg</code>
+    </p>
+    <p>
+      <strong>Element 2:</strong> Friction drag along 400m ramp:<br>
+      <code>6.5 × 10⁹ × 400 × 0.1 = 2.6 × 10¹¹ m·kg</code>
+    </p>
+    <p>
+      <strong>Total Work:</strong> <code>2.47 + 2.6 = ~5 × 10¹¹ m·kg</code>
+    </p>
+
+    <h3>Case 2 – Using a ‘Boat Lift’</h3>
+    <ul>
+      <li>8-stage lift (5m steps) reaches 38m (c.g. height)</li>
+      <li>Each slide (on/off shelves) averages 2m × 8 stages = <code>16 m</code> total sliding</li>
+      <li>Additional

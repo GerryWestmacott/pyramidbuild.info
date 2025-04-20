@@ -2,13 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Website</title>
+  <title>Simple Website with Banner</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       height: 100vh;
+    }
+
+    /* Top banner */
+    header {
+      width: 100%;
+      height: 120px; /* adjust as needed */
+      background-color: #222;
+    }
+
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Layout below banner */
+    .main-container {
+      display: flex;
+      flex: 1;
     }
 
     /* Sidebar styles */
@@ -44,17 +64,27 @@
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <a class="menu-item" href="home.html" target="contentFrame">Home</a>
-    <a class="menu-item" href="details.html" target="contentFrame">Details</a>
-    <a class="menu-item" href="diagram.html" target="contentFrame">Diagram</a>
-    <a class="menu-item" href="engine.html" target="contentFrame">500 HP Engine</a>
-    <a class="menu-item" href="video.html" target="contentFrame">Video</a>
-    <a class="menu-item" href="photo.html" target="contentFrame">Model Photo</a>
+
+  <!-- Top banner image -->
+  <header>
+    <img src="images/banner.jpg" alt="Website Banner">
+  </header>
+
+  <!-- Sidebar and main content -->
+  <div class="main-container">
+    <div class="sidebar">
+      <a class="menu-item" href="home.html" target="contentFrame">Home</a>
+      <a class="menu-item" href="details.html" target="contentFrame">Details</a>
+      <a class="menu-item" href="diagram.html" target="contentFrame">Diagram</a>
+      <a class="menu-item" href="engine.html" target="contentFrame">500 HP Engine</a>
+      <a class="menu-item" href="video.html" target="contentFrame">Video</a>
+      <a class="menu-item" href="photo.html" target="contentFrame">Model Photo</a>
+    </div>
+
+    <div class="content">
+      <iframe name="contentFrame" src="home.html"></iframe>
+    </div>
   </div>
 
-  <div class="content">
-    <iframe name="contentFrame" src="home.html"></iframe>
-  </div>
 </body>
 </html>

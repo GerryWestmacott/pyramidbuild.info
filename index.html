@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
       margin: 0;
+      padding: 0;
       height: 100%;
+      width: 100%;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: row;
+      background: url('images/banner2.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
 
     body {
-      background: url('images/banner2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 100%;
     }
 
     .sidebar {
-      width: 200px;
       background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
-      flex-shrink: 0;
+      height: 100vh;
+      overflow-y: auto;
     }
 
     .menu-item {
@@ -41,22 +43,21 @@
     }
 
     .content {
-      flex-grow: 1;
-      height: 100%;
-      min-height: 300px;
+      height: 100vh;
+      width: 100%;
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
-      background: transparent;
     }
 
-    /* Responsive: turn sidebar into horizontal menu on small screens */
+    /* Responsive mobile layout */
     @media (max-width: 600px) {
-      html, body {
-        flex-direction: column;
+      body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr;
       }
 
       .sidebar {
@@ -78,15 +79,12 @@
       }
 
       .content {
-        flex-grow: 1;
         height: calc(100vh - 60px);
-        min-height: 300px;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="sidebar">
     <a class="menu-item" href="home.html" target="contentFrame">Home</a>
     <a class="menu-item" href="details.html" target="contentFrame">Details</a>
@@ -112,6 +110,5 @@
       });
     });
   </script>
-
 </body>
 </html>

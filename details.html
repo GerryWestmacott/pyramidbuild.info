@@ -1,18 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Summary of the Pyramid Building Machine</title>
+  <meta charset="UTF-8">
+  <title>Summary of the Pyramid Building Machine</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/banner2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      height: 100%;
+      width: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    img.diagram {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    h1, h2 {
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      margin-bottom: 1em;
+      padding-left: 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    code {
+      font-family: monospace;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .spacer {
+      height: 60px;
+    }
+  </style>
 </head>
 <body>
+  <div class="overlay">
     <h1>A Summary of the Pyramid Building Machine</h1>
     <h2>The Great Pyramid – The Way It Was Built</h2>
 
     <h3>Background</h3>
     <ul>
-        <li>Building the Great Pyramid, the last surviving “7 wonders of the world”, was arguably the greatest project undertaken by man.</li>
-        <li>The 5000-year mystery can be explained in 5 minutes and is remarkably simple, though not obvious.</li>
-        <li>No human would have started such an undertaking without confidence of success. That confidence was a machine mentioned by the historian Herodotus. We now have a working scale model of such a machine.</li>
+      <li>Building the Great Pyramid, the last surviving “7 wonders of the world”, was arguably the greatest project undertaken by man.</li>
+      <li>The 5000-year mystery can be explained in 5 minutes and is remarkably simple, though not obvious.</li>
+      <li>No human would have started such an undertaking without confidence of success. That confidence was a machine mentioned by the historian Herodotus. We now have a working scale model of such a machine.</li>
     </ul>
 
     <p>Estimates have suggested that 100,000 men would be required to build the pyramid, but recent research shows local facilities could support about 20,000 people. Most were part-time farmers working during the Nile's annual inundation.</p>
@@ -52,9 +112,9 @@
 
     <h3>Concept Diagram</h3>
     <p><em>(Diagram placeholder: Pyramid Construction Model - basic concept)</em></p>
-    <p><img src="path-to-diagram.jpg" alt="Pyramid construction concept diagram"></p>
+    <p><img src="path-to-diagram.jpg" alt="Pyramid construction concept diagram" class="diagram"></p>
 
     <p>© Gerry Westmacott 2004</p>
-
+  </div>
 </body>
 </html>
